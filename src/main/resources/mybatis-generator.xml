@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--导入属性配置-->
+    <!--<properties resource="generatorConfig.properties"/>-->
+    <!--指定特定数据库的jdbc驱动jar包的位置-->
+    <context id="default" targetRuntime="MyBatis3" defaultModelType="flat">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:msyql://localhost:3306/miaosha" userId="root" password="123456">
+        </jdbcConnection>
+        <javaModelGenerator targetPackage="com.imooc.miaosha.dataobject" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="***" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.imooc.miaosha.dao" targetProject="src/main/java" >
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="user_info" domainObjectName="UserDO"></table>
+        <table tableName="user_password" domainObjectName="UserPasswordDO"></table>
+    </context>
+</generatorConfiguration>
